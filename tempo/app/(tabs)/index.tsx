@@ -105,22 +105,7 @@ const TempoApp = () => {
       setPrevisao(arrayPrevisao);
 
     } catch (erro) {
-      setTempo({
-        cidade: 'Cascavel',
-        temperatura: 24,
-        condicao: 'céu limpo',
-        icone: '01d',
-        umidade: 65,
-        velocidadeVento: 10,
-        sensacaoTermica: 25,
-        hora: formatarHora(),
-        data: formatarData(),
-      });
-      setPrevisao([
-        { dia: 'TER', icone: '01d', temperaturaMaxima: 26, temperaturaMinima: 18 },
-        { dia: 'QUA', icone: '02d', temperaturaMaxima: 25, temperaturaMinima: 19 },
-        { dia: 'QUI', icone: '04d', temperaturaMaxima: 23, temperaturaMinima: 17 },
-      ]);
+      console.warn("Erro ao buscar clima:", erro);
     } finally {
       setCarregando(false);
       setAtualizando(false);
