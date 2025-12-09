@@ -32,10 +32,10 @@ const TempoApp = () => {
       '03n': 'cloud',
       '04d': 'cloud',
       '04n': 'cloud',
-      '09d': 'rainy',
-      '09n': 'rainy',
-      '10d': 'rainy',
-      '10n': 'rainy',
+      '09d': 'umbrella',
+      '09n': 'umbrella',
+      '10d': 'umbrella',
+      '10n': 'umbrella',
       '11d': 'flash-on',
       '11n': 'flash-on',
       '13d': 'ac-unit',
@@ -84,7 +84,7 @@ const TempoApp = () => {
       };
 
       const previsaoDiaria = {};
-      dadosPrevisao.list.slice(0, 9).forEach(item => {
+      dadosPrevisao.list.slice(0, 18).forEach(item => {
         const data = new Date(item.dt * 1000);
         const nomeDia = data.toLocaleDateString('pt-BR', { weekday: 'short' }).split('-')[0];
         
@@ -98,7 +98,7 @@ const TempoApp = () => {
         }
       });
 
-      const arrayPrevisao = Object.values(previsaoDiaria).slice(0, 3);
+      const arrayPrevisao = Object.values(previsaoDiaria).slice(0, 24);
 
       setTempo(tempoProcessado);
       setPrevisao(arrayPrevisao);
@@ -207,8 +207,8 @@ const TempoApp = () => {
                     color="#fff" 
                   />
                   <View style={styles.faixaTemperatura}>
+                  <Text style={styles.temperaturaBaixa}>{dia.temperaturaMinima}°</Text>
                     <Text style={styles.temperaturaAlta}>{dia.temperaturaMaxima}°</Text>
-                    <Text style={styles.temperaturaBaixa}>{dia.temperaturaMinima}°</Text>
                   </View>
                 </View>
               ))}
