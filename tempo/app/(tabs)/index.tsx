@@ -67,6 +67,7 @@ const TempoApp = () => {
     try {
       const respostaAtual = await fetch(urlAtual);
       const dadosAtuais = await respostaAtual.json();
+      console.log(dadosAtuais);
 
       const respostaPrevisao = await fetch(urlPrevisao);
       const dadosPrevisao = await respostaPrevisao.json();
